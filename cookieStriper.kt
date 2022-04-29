@@ -27,6 +27,32 @@ main(){
         }
         return name
     }
+    
+    /// using and convertion of date formats in 
+    
+    val dateVals = "EEE : Day ( Mon )\n" +
+            "MMM : Month in words ( Dec )\n" +
+            "MM : Day in Count ( 324 )\n" +
+            "mm : Month ( 12 )\n" +
+            "dd : Date ( 3 )\n" +
+            "HH : Hours ( 12 )\n" +
+            "mm : Minutes ( 50 )\n" +
+            "ss : Seconds ( 34 )\n" +
+            "yyyy: Year ( 2020 ) //both yyyy and YYYY are same\n" +
+            "YYYY: Year ( 2020 )\n" +
+            "zzz : GMT+05:30\n" +
+            "aa : ( AM / PM )"
+    
+    fun convertToDate(date: String){
+	/*
+		change expiry string  date to a target date format
+	*/
+        val sourceFormat = SimpleDateFormat("EEE dd MMM yyy HH:mm:ss zzz", Locale.getDefault())
+        val convertedDate = sourceFormat.parse(date)
+	val targetFormat = SimpleDateFormat("EEE dd MMM yyy HH:mm:ss", Locale.getDefault())
+        val formattedDate = targetFormat.format(convertedDate)
+	return formattedDate
+    }
 
     val name = getName(sessionId)
     val date = getExpiry(sessionId)
