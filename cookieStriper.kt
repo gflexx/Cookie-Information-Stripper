@@ -3,6 +3,9 @@ main(){
     val csrf = "csrftoken=B7do7s94UGlKqX2TUqxGlOcKaHNLEmhQbNaTKJsbYumQ5wIhY8cpjPa5mZ4moeMm; Path=/; Expires=Sun, 09 Apr 2023 14:56:45 GMT;"
 
     fun getExpiry(sessionData: String) : String? {
+	/*
+		get expiry values by using string functions
+	*/
         val expiry : String? = null
         val arr = sessionData.split(";")
         for (value in arr){
@@ -15,6 +18,9 @@ main(){
     }
 
     fun getName(sessionData: String) : String?{
+	/*
+	 	get entity name by using string utils
+	*/
         var name: String? = null
         val data = sessionData.split(";")
         for (value in data){
@@ -28,7 +34,7 @@ main(){
         return name
     }
     
-    /// using and convertion of date formats in 
+    // date format values in Simple Date Format for parsing and convertion of dates
     
     val dateVals = "EEE : Day ( Mon )\n" +
             "MMM : Month in words ( Dec )\n" +
@@ -54,12 +60,5 @@ main(){
 	return formattedDate
     }
 
-    val name = getName(sessionId)
-    val date = getExpiry(sessionId)
-    println(name)
-    println(date)
-    val n = getName(csrf)
-    val d = getExpiry(csrf)
-    println(n)
-    println(d)
+  
 }
