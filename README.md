@@ -8,4 +8,4 @@ to use in my Kotlin project to check for cookie expiry
 <h4>getExpiry(sessionData: String)</h4
 <p>returns a date in string e.g Sun 24 Apr 2022 14:56:46 GMT</p>
 <h4>convertToDate(date: String)</h4>
-returns the string in date forma<p></p>
+returns the string in date format e.g Sun 24 Apr 2022 14:56:46<p></p>
